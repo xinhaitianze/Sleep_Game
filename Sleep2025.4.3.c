@@ -13,13 +13,13 @@ FontResource LoadFontResource(const char* fontPath) {
 	FontResource res = { 0 };
 	res.fontData = LoadFileData(fontPath, &res.fileSize);
 	if (res.fontData) {
-		// 预加载常用ASCII字符和基本中文
+		// 预加载常用ASCII字符
 		const char* preloadChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 			"!@#$%^&*()_+-=[]{};':\",./<>?\\|`~ ，！";
 
 		// 预加载基本汉字区的汉字
 		int codepointCount = 0;
-		int* codepoints = (int*)malloc(21000 * sizeof(int));  // 假设21000个汉字
+		int* codepoints = (int*)malloc(21000 * sizeof(int));  // 假设21000个汉字，当然这个数字是我瞎编的
 		for (int i = 0x4E00; i <= 0x9FFF; i++) {
 			codepoints[codepointCount++] = i;
 		}
