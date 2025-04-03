@@ -44,7 +44,7 @@ FontResource LoadFontResource(const char* fontPath) {
 
 int main(void) {
 	// 初始化窗口
-	InitWindow(1300, 800, "Font Cache Demo");
+	InitWindow(1300, 800, "Sleep");
 	SetTargetFPS(60);
 
 	// 加载基础字体
